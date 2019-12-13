@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import twitter from '../img/social/twitter.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -9,6 +8,7 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      activePage: 0
     }
   }
 
@@ -32,6 +32,12 @@ const Navbar = class extends React.Component {
     )
   }
 
+  toggleActivePage = (n) => {
+    this.setState({
+      activePage: n
+    })
+  }
+
   render() {
     return (
       <nav
@@ -42,7 +48,8 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <h1>NT4T</h1>
+              {/* <img src={logo} alt="Kaldi" style={{ width: '88px' }} /> */}
             </Link>
             {/* Hamburger menu */}
             <div
@@ -60,31 +67,30 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
+              <Link className={`navbar-item ${this.state.activePage == 1 ? "active-page" : ""}`} to="/about" onClick={() => this.toggleActivePage(1)}>
                 About
               </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
+              <Link className={`navbar-item ${this.state.activePage == 2 ? "active-page" : ""}`} to="/blog" onClick={() => this.toggleActivePage(2)}>
                 Blog
               </Link>
-              <Link className="navbar-item" to="/contact">
+              <Link className={`navbar-item ${this.state.activePage == 3 ? "active-page" : ""}`} to="/contact" onClick={() => this.toggleActivePage(3)}>
                 Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                href="https://twitter.com/NoTech4Tyrants"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="icon">
-                  <img src={github} alt="Github" />
+                <img
+                    className="fas fa-lg"
+                    src={twitter}
+                    alt="Twitter"
+                    style={{ width: '1em', height: '1em' }}
+                  />
                 </span>
               </a>
             </div>

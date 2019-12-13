@@ -17,6 +17,7 @@ class BlogRoll extends React.Component {
                 className={`blog-list-item tile is-child box notification ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
+                id="with-color"
               >
                 <header>
                   {post.frontmatter.featuredimage ? (
@@ -47,7 +48,7 @@ class BlogRoll extends React.Component {
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                    Continue Reading →
                   </Link>
                 </p>
               </article>
