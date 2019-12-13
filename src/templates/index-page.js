@@ -54,6 +54,18 @@ export const IndexPageTemplate = ({
         </h3>
       </div>
     </div>
+    <div className="columns">
+      <div className="column is-2 is-offset-4 has-text-centered">
+        <a className="btn full-width-btn" target="__blank" href="https://action.mijente.net/petitions/tell-palantir-to-drop-its-contracts-with-tyrants-notechfortyrants-university-of-cambridge">
+          Sign the Pledge
+        </a>
+      </div>
+      <div className="column is-2 has-text-centered">
+        <Link className="btn full-width-btn" to="/contact">
+          Join Us
+        </Link>
+      </div>
+    </div>  
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
