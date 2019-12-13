@@ -67,13 +67,13 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className={`navbar-item ${this.state.activePage == 1 ? "active-page" : ""}`} to="/about" onClick={() => this.toggleActivePage(1)}>
+              <Link className={`navbar-item ${this.state.activePage === 1 ? "active-page" : ""}`} to="/about" onClick={() => this.toggleActivePage(1)}>
                 About
               </Link>
-              <Link className={`navbar-item ${this.state.activePage == 2 ? "active-page" : ""}`} to="/blog" onClick={() => this.toggleActivePage(2)}>
+              <Link className={`navbar-item ${this.state.activePage === 2 ? "active-page" : ""}`} to="/blog" onClick={() => this.toggleActivePage(2)}>
                 Blog
               </Link>
-              <Link className={`navbar-item ${this.state.activePage == 3 ? "active-page" : ""}`} to="/contact" onClick={() => this.toggleActivePage(3)}>
+              <Link className={`navbar-item ${this.state.activePage === 3 ? "active-page" : ""}`} to="/contact" onClick={() => this.toggleActivePage(3)}>
                 Contact
               </Link>
             </div>
